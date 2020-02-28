@@ -1,7 +1,9 @@
 2020.02.03: 3
-53, 146, 200 
+53, 146, 200
+
 2020.02.04: 6
 56, 76, 138, 202, 238, 1007
+
 2020.02.05: 看到reverse linked list 想到stack 7
 160, 82, 430, 203, 143, 445, 938
 
@@ -15,10 +17,18 @@
 256, 746, 392, 1047(看到1D数组消消乐想到stack), 496, 937, 994(Grid 一轮一轮的update尝试用queue记录当前状态 完成一轮后push in 变化), 7, 572(尝试写一个helper比较tree，不要直接自身recurse)
 
 2020.02.15: 6
-412, 819, 811, 543(null -> 0 else max(left, right) + 1), 176(leetcode mysql server out of date || select second/third/fourth highest: select distinct t1.salary from t1 where( select count(distinct t2.salary) from t2 where t1.salary > t2.salary) = 1/2/3) →  找出表中(大于A元素的元素 == 1)的元素, 67
+412, 819, 811,
+
+543(null -> 0 else max(left, right) + 1), 
+
+176(leetcode mysql server out of date || select second/third/fourth highest: select distinct t1.salary from t1 where( select count(distinct t2.salary) from t2 where t1.salary > t2.salary) = 1/2/3) →  找出表中(大于A元素的元素 == 1)的元素,
+
+67
 
 2020.02.16: 7
+
 252, 253, 33, 973,
+
 322 solution 1: DFS + Greedy(always go with the largest coin first) + Pruning(if find remaining amount == 0, update minstep, go on, if curr step > minstep, stop):
 
 Solution2:
@@ -28,17 +38,24 @@ DP[i] = amount + 1, and finally check if the value changes
 54(set start, endpoint corresponding to lefttop, rightbottom, and +1, -1.
 倒着iterate index, 完成一行/一列加减相应的row/col:
 for i in range(rightbottomrow, lefttopcol, -1) -> [rightbottomrow, lefttopcol], i--),
+
 49
 
 2020.02.17: 6
+
 139(word break: DP[i]: array[0:i] can be constructed by dict? DP[0] = True -> base case, {for i in [0, len] for j in [0,i)}),
+
 380, 240(search from top-right, if cur > target: col--, if cur < target: row++ → 如果cur > target, 那么target不可能在current column因为它是ascending),
+
 1130(Minimum Cost Tree From Leaf Values: 元素顺序不能变 for n elements, need to multiply n-1 times and eliminate one element per time. 既然每次要消掉一个N并sum += N*另一个element，那么minimize sum的方法是使N*min(arr[indexof(N) - 1], arr[indexof(N) +1])),
+
 91(use DP to compute 2 digits and 1 digit in once.
 if 0 < s[i-1:i] <= 9, dp[i] += dp[i-1]
 if 10 <= s[i-2:i] <= 26: dp[i] += dp[i-2]
 so that “230” results dp: [1, 1, 2, 0] because in “30”, 0 does not add to dp[i], 30 is also out of range),
+
 981(since timestamp inserted ascending, map<key, [valuearr, timearr]>), binary search timestamp using external library bisect)
+
 2020.02.18: 5
 31(Next Permutation: e.g. 1,2,4,6,5,3 find the element before reversely ordered subarray from the end. Then in [6,5,3], there must be an element larger than 4. Find the smallest element larger than 4 and swap. Then reverse the subarray 1,2,5, [6,4,3]to get the smallest permutation of the subarray),
 
@@ -69,7 +86,9 @@ do it iteratively: use stack.
 1241,
 
 2020.02.24:  5
+
 704, 1046(maxheap, or sort list -> bisect insort), 1209(stack[[char, freq]]),
+
 695(number of island。
 if out of bound:
   return 0
@@ -92,11 +111,11 @@ else:
 79(dfs just like number of island.
 before dfs on neighbor, special char on self, so self cell is not used in subsequent dfs!
 if len(word) == 0, return True. If index out of range or not match, return False, else continue dfs)
+
 [212加强版 未做: return all words in matrix: 把array of words做成一个trie,
 trie里有int[26]来存下一个char, 每个trie LeafNode存full string
 
-dfs every cell, if no entry in trie, return false; else dfs]
-,
+dfs every cell, if no entry in trie, return false; else dfs],
 
 
 Google OA: 
